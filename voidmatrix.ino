@@ -133,15 +133,16 @@ void displayTime(){
   case 7:
     Serial.println("Saturday");
     break;
+
   }
 }
 void loop () {   displayTime(); // display the real-time clock data on the Serial Monitor,
-  delay(1000); // every second
+  displaytemp(); //displaythetemp?
+    delay(4000);
    }
 
-void tmep() {
+void displaytemp() {
   // Wait a few seconds between measurements.
-  delay(2000);
 
   // Reading temperature or humidity takes about 250 milliseconds!
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
@@ -163,9 +164,9 @@ void tmep() {
   float hic = dht.computeHeatIndex(t, h, false);
 
   Serial.print(F(""));
-  //Serial.print(h);
-  //Serial.print(F("%  Temperature: "));
- // Serial.print(t);
+  Serial.print(h);
+Serial.print(F("%  Temperature: "));
+ Serial.print(t);
  // Serial.print(F("C "));
   //Serial.print(f);
   //Serial.print(F("F  Heat index: "));
@@ -173,4 +174,6 @@ void tmep() {
  // Serial.print(F("C "));
  // Serial.print(hif);
   //Serial.println(F("F"));
+      delay(2000);
+
 }
